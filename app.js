@@ -52,7 +52,7 @@ auth: "sang:4692e05a94910e7e204534bd4345c555-us21"
                 console.log(JSON.parse(data));
             })
         })
-// request.write(jsonData);
+request.write(jsonData);
 request.end();
 
 });
@@ -67,7 +67,7 @@ app.post("/failure",function(req,res){
 
 
 
-
+// process.env.PORT || 3000
 app.listen(process.env.PORT || 3000, function(){
     console.log("sangeetha");
 })
