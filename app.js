@@ -8,7 +8,15 @@ const app = express();
 app.use(bodyParser.urlencoded({expanded:true}));
 app.use(express.static(__dirname + '/'));
 
+// app.get("/", function(req,res){
+//     console.log("jandjad" + req.ip);
+
+
+// })
+
+
 app.get("/", function(req,res){
+
 res.sendFile(__dirname + "/signup.html")
 
 })
