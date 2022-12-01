@@ -1,12 +1,12 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const request = require("request");
-const https = require("https");
-const { useField } = require("formik");
+import express, { static } from "express";
+import { urlencoded } from "body-parser";
+import request from "request";
+import { request as _request } from "https";
+import { useField } from "formik";
 const app = express();
 
-app.use(bodyParser.urlencoded({expanded:true}));
-app.use(express.static(__dirname + '/'));
+app.use(urlencoded({expanded:true}));
+app.use(static(__dirname + '/'));
 
 // app.get("/", function(req,res){
 //     console.log("jandjad" + req.ip);
@@ -48,7 +48,7 @@ const options ={
 method:"POST",
 auth: "sang:4692e05a94910e7e204534bd4345c555-us21"
 }
-        const request = https.request(url, options, function(response){
+        const request = _request(url, options, function(response){
 
             if(response.statusCode === 200){
                 res.sendFile(__dirname + "/success.html");
