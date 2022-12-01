@@ -2,17 +2,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
-// const { useField } = require("formik");
+
 const app = express();
 
 app.use(bodyParser.urlencoded({expanded:true}));
 app.use(express.static(__dirname + '/'));
 
-// app.get("/", function(req,res){
-//     console.log("jandjad" + req.ip);
 
-
-// })
 
 
 app.get("/", function(req,res){
